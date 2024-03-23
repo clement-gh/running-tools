@@ -1,0 +1,76 @@
+<div class="formulaire-calcul-gels">
+  <h2>Calculateur de quantité de gels</h2>
+
+  <mat-checkbox
+    [(ngModel)]="boissonRenseignee"
+    color="primary"
+    (change)="handleCheckboxChange($event)"
+  >
+    Renseigner la boisson
+  </mat-checkbox>
+
+  
+  <form [formGroup]="formCalculGels" (ngSubmit)="handleSubmit()" class="form">
+    <div *ngIf="boissonRenseignee">
+      <div>
+        <mat-form-field>
+          <mat-label
+            >Concentration de la boisson isotonique (en g/500ml)</mat-label
+          >
+          <input
+            matInput
+            type="number"
+            formControlName="concentrationBoissonIso"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label
+            >Quantité de boisson emportée durant la course (en ml)</mat-label
+          >
+          <input matInput type="number" formControlName="quantiteBoisson" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Concentration des gels (en g/gel)</mat-label>
+        <input matInput type="number" formControlName="concentrationGels" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Objectif de glucides par heure (en g/heure)</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="objectifGlucidesParHeure"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Temps de course (en minutes)</mat-label>
+        <input matInput type="number" formControlName="tempsCourseMinutes" />
+      </mat-form-field>
+    </div>
+
+    <button type="submit">Soumettre</button>
+  </form>
+
+  <div *ngIf="shouldDisplayResult()">
+    <h3>Résultat :</h3>
+    <p>Nombre de gels nécessaires : {{ resultat?.nombreGels }}</p>
+    <p>
+      Fréquence de consommation des gels : 1 toutes les
+      {{ resultat?.frequenceGelsMinutes }} minutes
+    </p>
+    <p *ngIf="resultat?.boisson">
+      Boire une gorgée toute les (15ml/gorgée) :
+      {{ resultat?.frequenceGorgeesMinutes }} minutes
+    </p>
+    <button (click)="reset()">Réinitialiser</button>
+  </div>
+
+</div>
