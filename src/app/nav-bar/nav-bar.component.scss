@@ -1,0 +1,34 @@
+.navbar {
+    &.home {
+      background-color: #353333;
+      color: #353333;
+    }
+  
+    
+    &.calculateur-glucides {
+      background-color: #654321;
+      color: #fedcba;
+    }
+  }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    color:white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color:#353333;
+}
