@@ -9,7 +9,6 @@
     Renseigner la boisson
   </mat-checkbox>
 
-  
   <form [formGroup]="formCalculGels" (ngSubmit)="handleSubmit()" class="form">
     <div *ngIf="boissonRenseignee">
       <div>
@@ -46,7 +45,6 @@
           matInput
           type="number"
           formControlName="objectifGlucidesParHeure"
-         
         />
       </mat-form-field>
     </div>
@@ -64,7 +62,7 @@
     <h3>Résultat :</h3>
     <p>Nombre de gels nécessaires : {{ resultat?.nombreGels }}</p>
     <p>
-      Fréquence de consommation des gels : 1 toutes les
+      Fréquence de consommation: 1 gel toutes les
       {{ resultat?.frequenceGelsMinutes }} minutes
     </p>
     <p *ngIf="resultat?.boisson">
@@ -73,5 +71,4 @@
     </p>
     <button (click)="reset()">Réinitialiser</button>
   </div>
-
 </div>
