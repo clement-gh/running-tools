@@ -1,4 +1,4 @@
-import { calculerQuantiteGels2 } from '../../services/Calculate-gels';
+import { calculerQuantiteGels2 } from '../../services/calculate-gels';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {
   AbstractControl,
