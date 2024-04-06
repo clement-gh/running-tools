@@ -1,0 +1,21 @@
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.image-container {
+    max-height: calc(100vh - 20vh); /* Remplacez 20vh par la hauteur totale des éléments au-dessus de l'image */
+    overflow: hidden; /* Cache tout contenu qui dépasse la hauteur maximale */
+  }
+  
+  .img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover; /* Assure que l'image couvre toute la hauteur et la largeur de son conteneur sans déformation */
+  }
