@@ -1,36 +1,28 @@
 .navbar {
   padding: 10px;
-    &.home {
-      background-color: #353333;
-      color: #353333;
 
-    }
-  
-    
-    &.calculateur-glucides {
-      background-color: #353333;
-      color: #353333;
-    }
-  }
+  background-color: #353333;
+  color: #353333;
+}
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 li {
-    display: inline;
-    margin-right: 20px;
+  display: inline;
+  margin-right: 20px;
 }
 
 a {
-    color:white;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-    color:#ceb0b0;
+  color: #ceb0b0;
 }
