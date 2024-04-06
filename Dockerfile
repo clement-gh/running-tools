@@ -1,26 +1,17 @@
-# docker file angular
+# Utiliser une image Node.js comme base
+FROM node:18
 
-# Base image
-FROM node:alpine
-
-
-# Set the working directory to /ap
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-
-# Copy the current directory contents into the container at /app
+# Copier les fichiers de l'application
 COPY . .
 
+# Installer les dépendances
+RUN npm install
 
-# Make port 4500 available to the world outside this container
-EXPOSE  4500
+# Exposer le port 4500
+EXPOSE 4500
 
-# Run the app when the container launches
-CMD ["npm", "start"]
-
+# Commande pour démarrer l'application Angular
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--port", "4500"]
