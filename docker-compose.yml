@@ -1,15 +1,9 @@
+version: '3'
 services:
-  front:
+  angular-app:
     build:
-      context: ./front  # Chemin vers le dossier front
-      dockerfile: Dockerfile  
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "4500:4500"
-   # depends_on:
-   #   - back  # Le service front dépend du service back (optionnel)
-  back:
-    build:
-      context: ./back  # Chemin vers le dossier back
-      dockerfile: Dockerfile  # Nom du Dockerfile dans ce dossier (par défaut)
-    ports:
-      - "8080:8080"
+    restart: always
